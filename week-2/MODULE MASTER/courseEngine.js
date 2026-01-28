@@ -1,6 +1,11 @@
-const { courses } = require('./data');
-
 // MODULE 2: COURSE CATALOG ENGINE
+
+// Local data
+const courses = [
+  { id: 101, title: "JavaScript", price: 999, published: true },
+  { id: 102, title: "React", price: 1499, published: false },
+  { id: 103, title: "Node", price: 1299, published: true }
+];
 
 /**
  * Get published courses
@@ -44,6 +49,16 @@ function calculatePublishedCoursesValue() {
 function addCourse(newCourse) {
   return [...courses, newCourse];
 }
+
+// Run and display outputs
+console.log('\n=== COURSE ENGINE ===');
+console.log('Published Courses:');
+console.log(getPublishedCourses());
+console.log('\nSorted by Price:');
+console.log(sortCoursesByPrice());
+console.log('\nTitle and Price:');
+console.log(extractTitleAndPrice());
+console.log('\nTotal Published Value:', calculatePublishedCoursesValue());
 
 module.exports = {
   getPublishedCourses,
